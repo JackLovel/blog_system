@@ -1,0 +1,13 @@
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\bin\Debug\BlogSystem.Models.dll.config
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\bin\Debug\BlogSystem.Models.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\bin\Debug\BlogSystem.Models.pdb
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\bin\Debug\EntityFramework.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\bin\Debug\EntityFramework.xml
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.csproj.CoreCompileInputs.cache
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.csproj.CopyComplete
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.pdb
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.Migrations.createBlog.resources
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.csproj.GenerateResource.cache
