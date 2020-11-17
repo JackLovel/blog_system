@@ -1,0 +1,12 @@
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\bin\Debug\BlogSystem.Dto.dll.config
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\bin\Debug\BlogSystem.Dto.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\bin\Debug\BlogSystem.Dto.pdb
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\bin\Debug\EntityFramework.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\bin\Debug\EntityFramework.xml
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\obj\Debug\BlogSystem.Dto.csprojAssemblyReference.cache
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\obj\Debug\BlogSystem.Dto.csproj.CoreCompileInputs.cache
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\obj\Debug\BlogSystem.Dto.csproj.CopyComplete
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\obj\Debug\BlogSystem.Dto.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\obj\Debug\BlogSystem.Dto.pdb

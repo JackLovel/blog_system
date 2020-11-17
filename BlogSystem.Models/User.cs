@@ -14,7 +14,7 @@ namespace BlogSystem.Models
         /// <summary>
         /// 粉丝数量
         /// </summary>
-        public int FunsCount { get; set; }
+        public int FansCount { get; set; }
         /// <summary>
         /// 关注数
         /// </summary>

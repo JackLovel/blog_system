@@ -1,0 +1,15 @@
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\bin\Debug\BlogSystem.IDAL.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\bin\Debug\BlogSystem.IDAL.pdb
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\bin\Debug\BlogSystem.Models.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\bin\Debug\EntityFramework.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\bin\Debug\BlogSystem.Models.pdb
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\bin\Debug\BlogSystem.Models.dll.config
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\bin\Debug\EntityFramework.xml
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\obj\Debug\BlogSystem.IDAL.csprojAssemblyReference.cache
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\obj\Debug\BlogSystem.IDAL.csproj.CoreCompileInputs.cache
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\obj\Debug\BlogSystem.IDAL.csproj.CopyComplete
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\obj\Debug\BlogSystem.IDAL.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\obj\Debug\BlogSystem.IDAL.pdb
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\bin\Debug\BlogSystem.IDAL.dll.config
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IDAL\bin\Debug\EntityFramework.SqlServer.xml
