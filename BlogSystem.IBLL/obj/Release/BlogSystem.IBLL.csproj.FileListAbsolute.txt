@@ -1,0 +1,15 @@
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\obj\Release\BlogSystem.IBLL.csprojAssemblyReference.cache
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\obj\Release\BlogSystem.IBLL.csproj.CoreCompileInputs.cache
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\bin\Release\BlogSystem.IBLL.dll.config
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\bin\Release\BlogSystem.IBLL.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\bin\Release\BlogSystem.IBLL.pdb
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\bin\Release\BlogSystem.Dto.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\bin\Release\EntityFramework.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\bin\Release\BlogSystem.Dto.pdb
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\bin\Release\BlogSystem.Dto.dll.config
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\bin\Release\EntityFramework.xml
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\obj\Release\BlogSystem.IBLL.csproj.CopyComplete
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\obj\Release\BlogSystem.IBLL.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.IBLL\obj\Release\BlogSystem.IBLL.pdb

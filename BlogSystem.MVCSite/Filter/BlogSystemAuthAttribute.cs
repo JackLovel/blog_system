@@ -16,9 +16,8 @@ namespace BlogSystem.MVCSite.Filter
             if (filterContext.HttpContext.Request.Cookies["loginName"] != null &&
                filterContext.HttpContext.Session["loginName"] == null)
             {
-                filterContext.HttpContext.Session["loginName"] = filterContext.HttpContext.Request.Cookies["loginName"];
-                filterContext.HttpContext.Session["userid"] = filterContext.HttpContext.Request.Cookies["userid"];
-
+                filterContext.HttpContext.Session["loginName"] = filterContext.HttpContext.Request.Cookies["loginName"].Value;
+                filterContext.HttpContext.Session["userid"] = filterContext.HttpContext.Request.Cookies["userid"].Value;
             }
 
             if (!(filterContext.HttpContext.Session["loginName"] != null ||

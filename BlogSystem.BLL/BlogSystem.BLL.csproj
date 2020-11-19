@@ -61,7 +61,7 @@
       <Name>BlogSystem.DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\BlogSystem.Dto\BlogSystem.Dto.csproj">
-      <Project>{28db5aa4-d7f6-4738-a944-272fb5ea0598}</Project>
+      <Project>{28DB5AA4-D7F6-4738-A944-272FB5EA0598}</Project>
       <Name>BlogSystem.Dto</Name>
     </ProjectReference>
     <ProjectReference Include="..\BlogSystem.IBLL\BlogSystem.IBLL.csproj">
@@ -69,7 +69,7 @@
       <Name>BlogSystem.IBLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\BlogSystem.IDAL\BlogSystem.IDAL.csproj">
-      <Project>{ccb46b8b-93e5-49fa-877b-4a228610296b}</Project>
+      <Project>{CCB46B8B-93E5-49FA-877B-4A228610296B}</Project>
       <Name>BlogSystem.IDAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\BlogSystem.Models\BlogSystem.Models.csproj">

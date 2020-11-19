@@ -51,8 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IArticleToCategory.cs" />
     <Compile Include="IArticleService.cs" />
+    <Compile Include="IArticleToCategoryService.cs" />
     <Compile Include="IBaseService.cs" />
     <Compile Include="IBlogCategory.cs" />
     <Compile Include="IUserService.cs" />

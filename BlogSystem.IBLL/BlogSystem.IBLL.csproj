@@ -60,10 +60,6 @@
       <Project>{28db5aa4-d7f6-4738-a944-272fb5ea0598}</Project>
       <Name>BlogSystem.Dto</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BlogSystem.IDAL\BlogSystem.IDAL.csproj">
-      <Project>{ccb46b8b-93e5-49fa-877b-4a228610296b}</Project>
-      <Name>BlogSystem.IDAL</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
