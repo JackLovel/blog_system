@@ -72,7 +72,7 @@
 
         @foreach (var item in Model.CategoryNames) 
         {
-            <dd>
+            <dd class="categoryIds">
                 @item
             </dd>  
         }
@@ -80,5 +80,15 @@
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "ArticleList")
 </p>
+
+@section headers {
+    <style>
+        .categoryIds {
+            float: left;
+            margin: 0px 3px !important;
+            padding: 0px; 
+        }
+    </style>
+}
