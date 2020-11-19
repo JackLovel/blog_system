@@ -64,6 +64,14 @@ namespace BlogSystem.BLL
             throw new NotImplementedException();
         }
 
+        public async Task<bool> ExistsArticle(Guid articleId)
+        {
+            using (IDAL.IArticleService articleService = new ArticleService()) 
+            {
+                return await articleService.GetAllAsync().AnyAsync(m => m.Id == articleId);
+            }
+        }
+
         public Task<List<ArticleDto>> GetAllArticlesByCategoryId(Guid categoryId)
         {
             throw new NotImplementedException();
@@ -114,6 +122,36 @@ namespace BlogSystem.BLL
                     Id = m.Id, 
                     CategoryName = m.CategoryName
                 }).ToListAsync();
+            }
+        }
+
+        public async Task<ArticleDto> GetOneArticleById(Guid articleId)
+        {
+            using (IDAL.IArticleService articleService = new ArticleService()) 
+            {
+                var data = await articleService.GetAllAsync()
+                    .Include(m => m.User)
+                    .Where(m => m.Id == articleId)
+                    .Select(m => new Dto.ArticleDto()
+                    {
+                        Id = m.Id,
+                        BadCount = m.BadCount,
+                        Title = m.Title,
+                        Content = m.Content, 
+                        CreateTime = m.CreateTime, 
+                        Email = m.User.Email, 
+                        GoodCount = m.GoodCount, 
+                        ImagePath = m.User.ImagePath
+                    }).FirstAsync();
+
+                using (IArticleToCategoryService articleToCategoryService = new ArticleToCategoryService())
+                {
+                    var cates = await articleToCategoryService.GetAllAsync().Include(m => m.BlogCategory)
+                                .Where(m => m.ArticleId == data.Id).ToListAsync();
+                    data.CategoryIds = cates.Select(m => m.BlogCategoryId).ToArray();
+                    data.CategoryNames = cates.Select(m => m.BlogCategory.CategoryName).ToArray();
+                    return data; 
+                }
             }
         }
 

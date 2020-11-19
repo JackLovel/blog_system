@@ -27,12 +27,12 @@ namespace BlogSystem.MVCSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CreateCategory(CreateCategoryViewModel model)
         {
-            if (ModelState.IsValid) 
+            if (ModelState.IsValid)
             {
                 IArticleManager articleManager = new ArticleManager();
                 articleManager.CreateCategory(model.CategoryName, Guid.Parse(Session["userid"].ToString()));
 
-                return RedirectToAction("CategoryList"); 
+                return RedirectToAction("CategoryList");
             }
 
             ModelState.AddModelError("", "您录入的信息的有误！");
@@ -40,7 +40,7 @@ namespace BlogSystem.MVCSite.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> CategoryList() 
+        public async Task<ActionResult> CategoryList()
         {
             var userid = Guid.Parse(Session["userid"].ToString());
             return View(await new ArticleManager().GetAllCategories(userid));
@@ -58,7 +58,7 @@ namespace BlogSystem.MVCSite.Controllers
         [HttpPost]
         public async Task<ActionResult> CreateArticle(CreateArticleViewModel model)
         {
-            if (ModelState.IsValid) 
+            if (ModelState.IsValid)
             {
                 var userid = Guid.Parse(Session["userid"].ToString());
                 await new ArticleManager().CreateArticle(model.Title, model.Content, model.CategoryIds, userid);
@@ -73,8 +73,19 @@ namespace BlogSystem.MVCSite.Controllers
         public async Task<ActionResult> ArticleList()
         {
             var userid = Guid.Parse(Session["userid"].ToString());
-            var articles = await new ArticleManager().GetAllArticlesByUserId(userid); 
+            var articles = await new ArticleManager().GetAllArticlesByUserId(userid);
             return View(articles);
+        }
+
+        public async Task<ActionResult> ArticleDetails(Guid? id) 
+        {
+            var articleManager = new ArticleManager();
+            if (id == null || !await articleManager.ExistsArticle(id.Value)) 
+            {
+                return RedirectToAction(nameof(ArticleList));
+            }
+
+            return View(await articleManager.GetOneArticleById(id.Value));
         }
     }
 }

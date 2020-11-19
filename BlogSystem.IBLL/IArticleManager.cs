@@ -17,5 +17,7 @@ namespace BlogSystem.IBLL
         Task EditCategory(Guid categoryId,string newCategory);
         Task RemoveArticle(Guid articleId);
         Task EditArticle(Guid articleId, string title, string content, Guid[] categoryIds);
+        Task<bool> ExistsArticle(Guid articleId);
+        Task<Dto.ArticleDto> GetOneArticleById(Guid articleId);
     }
 }
