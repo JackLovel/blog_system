@@ -58,6 +58,7 @@ namespace BlogSystem.MVCSite.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public async Task<ActionResult> CreateArticle(CreateArticleViewModel model)
         {
             if (ModelState.IsValid)
