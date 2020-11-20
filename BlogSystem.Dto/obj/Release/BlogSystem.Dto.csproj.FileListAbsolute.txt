@@ -9,3 +9,4 @@ C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\obj\Release\BlogSystem.Dto.c
 C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\obj\Release\BlogSystem.Dto.csproj.CopyComplete
 C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\obj\Release\BlogSystem.Dto.dll
 C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\obj\Release\BlogSystem.Dto.pdb
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Dto\obj\Release\BlogSystem.Dto.csprojAssemblyReference.cache

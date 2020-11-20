@@ -1,10 +1,12 @@
 ﻿using BlogSystem.BLL;
+using BlogSystem.Dto;
 using BlogSystem.IBLL;
 using BlogSystem.MVCSite.Filter;
 using BlogSystem.MVCSite.Models.ArticleViewModels;
 using System;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using Webdiyer.WebControls.Mvc;
 
 namespace BlogSystem.MVCSite.Controllers
 {
@@ -69,17 +71,33 @@ namespace BlogSystem.MVCSite.Controllers
             return View();
         }
 
+        //[HttpGet]
+        //public async Task<ActionResult> ArticleList(int pageIndex = 0, int pageSize = 1)
+        //{
+        //    // 需要给页面前端总页码数，当前页码，可显示的总页码数量
+        //    var manager = new ArticleManager();
+        //    var userid = Guid.Parse(Session["userid"].ToString());
+        //    var articles = await manager.GetAllArticlesByUserId(userid,pageIndex,pageSize);
+        //    var dataCount = await manager.GetDataCount(userid);
+        //    ViewBag.PageCount = dataCount % pageSize == 0? dataCount/pageSize: dataCount / pageSize + 1;
+        //    ViewBag.PageIndex = pageIndex; 
+        //    return View(articles);
+        //}
+
         [HttpGet]
-        public async Task<ActionResult> ArticleList(int pageIndex = 0, int pageSize = 1)
+        public async Task<ActionResult> ArticleList(int pageIndex = 1, int pageSize = 3)
         {
             // 需要给页面前端总页码数，当前页码，可显示的总页码数量
             var manager = new ArticleManager();
             var userid = Guid.Parse(Session["userid"].ToString());
-            var articles = await manager.GetAllArticlesByUserId(userid,pageIndex,pageSize);
+            // 当前用户第n页数据
+            var articles = await manager.GetAllArticlesByUserId(userid, pageIndex-1, pageSize);
+            // 获取当前用户文章总数
             var dataCount = await manager.GetDataCount(userid);
-            ViewBag.PageCount = dataCount % pageSize == 0? dataCount/pageSize: dataCount / pageSize + 1;
-            ViewBag.PageIndex = pageIndex; 
-            return View(articles);
+
+            //ViewBag.PageCount = dataCount % pageSize == 0 ? dataCount / pageSize : dataCount / pageSize + 1;
+            //ViewBag.PageIndex = pageIndex;
+            return View(new PagedList<ArticleDto>(articles,pageIndex,pageSize,dataCount));
         }
 
         public async Task<ActionResult> ArticleDetails(Guid? id) 

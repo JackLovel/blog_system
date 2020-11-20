@@ -11,3 +11,4 @@ C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Release\BlogSystem.Mo
 C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Release\BlogSystem.Models.csproj.CopyComplete
 C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Release\BlogSystem.Models.dll
 C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Release\BlogSystem.Models.pdb
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Release\BlogSystem.Models.csprojAssemblyReference.cache

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BlogSystem.Dto.ArticleDto>
+﻿@using Webdiyer.WebControls.Mvc 
+@model Webdiyer.WebControls.Mvc.PagedList<BlogSystem.Dto.ArticleDto>
 
 @{
     ViewBag.Title = "ArticleList";
@@ -81,81 +82,23 @@
     <tfoot>
         <tr>
             <td colspan="6">
-                <ul class="pagerList">
-                    @if (ViewBag.PageCount <= 7)
-                    {
-                        // 数据实际页码数量小于等于可容纳页码的总量
-                        for (int i = 1; i <= ViewBag.PageCount; i++)
-                        {
-                            <li>
-                                <a href="/Article/ArticleList?pageIndex=@(i-1)"> @i </a>
-                            </li>
-                        }
-
-                    }
-                    else
-                    {
-                        // 数据实际页码数量大于可容纳页码的总量
-                        if (ViewBag.PageIndex <= 7 / 2)
-                        {
-                            for (int i = 1; i <= 7; i++)
-                            {
-                                if (i == ViewBag.PageIndex + 1)
-                                {
-                                    <li>
-                                        <span style="color:red"> @i </span>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li>
-                                        <a href="/Article/ArticleList?pageIndex=@(i-1)"> @i </a>
-                                    </li>
-                                }
-                            }
-
-                        }
-                        else if ((ViewBag.PageCount - ViewBag.PageIndex - 1) <= 7 / 2)
-                        {
-                            for (int i = ViewBag.PageCount - 6; i <= ViewBag.PageCount; i++)
-                            {
-                                if (i == ViewBag.PageIndex + 1)
-                                {
-                                    <li>
-                                        <a style="color:red" href="#"> @i </a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li>
-                                        <a href="/Article/ArticleList?pageIndex=@(i-1)"> @i </a>
-                                    </li>
-                                }
-
-                            }
-                        }
-                        else
-                        {
-                            for (int i = ViewBag.PageIndex - 7 / 2 + 1; i <= ViewBag.PageIndex + 7 / 2 + 1; i++)
-                            {
-                                if (i == ViewBag.PageIndex + 1)
-                                {
-                                    <li>
-                                        <a style="color:red" href="#"> @i </a>
-                                    </li>
-                                }
-                                else
-                                {
-                                    <li>
-                                        <a href="/Article/ArticleList?pageIndex=@(i-1)"> @i </a>
-                                    </li>
-                                }
-                            }
-                        }
-                    }
-                </ul>
+                <nav>
+                    @Html.Pager(Model, new PagerOptions { PageIndexParameterName = "pageIndex", ContainerTagName = "ul", CssClass = "pagination", CurrentPagerItemTemplate = "<li class=\"active\"><a href=\"#\">{0}</a></li>", DisabledPagerItemTemplate = "<li class=\"disabled\"><a>{0}</a></li>", PagerItemTemplate = "<li>{0}</li>", Id = "bootstrappager" })
+                </nav>
             </td>
         </tr>
     </tfoot>
 
 </table>
+
+@section headers {
+    <style>
+        .pagination {
+            display: flex; 
+            flex-direction: row; 
+            justify-content: center; 
+            margin: 0px;
+            padding: 3px; 
+        }
+    </style>
+}
