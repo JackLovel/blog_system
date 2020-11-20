@@ -71,9 +71,9 @@
                     @Html.DisplayFor(modelItem => item.ImagePath)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "ArticleDetails", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    @Html.ActionLink("修改", "EditArticle", new { id = item.Id }) |
+                    @Html.ActionLink("详细", "ArticleDetails", new { id = item.Id }) |
+                    @Html.ActionLink("删除", "Delete", new { id = item.Id })
                 </td>
             </tr>
         }

@@ -116,7 +116,14 @@ namespace BlogSystem.MVCSite.Controllers
         public async Task<ActionResult> EditArticle(Guid id)
         {
             IBLL.IArticleManager manager = new ArticleManager();
-            return View(await manager.GetOneArticleById(id));
+            var data = await manager.GetOneArticleById(id);
+            return View(new EditArticleViewModel() 
+            {
+                Title = data.Title, 
+                Content = data.Content,
+                CategoryIds = data.CategoryIds,
+                Id = data.Id
+            });
         }
     }
 }
