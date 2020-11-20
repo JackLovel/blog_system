@@ -84,9 +84,42 @@ namespace BlogSystem.BLL
 
         public async Task<List<ArticleDto>> GetAllArticlesByUserId(Guid userId)
         {
+            using (var articleSvc = new ArticleService())
+            {
+                var list = await articleSvc.GetAllAsync().Include(m => m.User).Where(m => m.UserId == userId).Select(m => new ArticleDto()
+                {
+                    Title = m.Title,
+                    BadCount = m.BadCount,
+                    GoodCount = m.GoodCount,
+                    Email = m.User.Email,
+                    Content = m.Content,
+                    CreateTime = m.CreateTime,
+                    Id = m.Id,
+                    ImagePath = m.User.ImagePath
+                }).ToListAsync();
+
+                using (IArticleToCategoryService articleToCategoryService = new ArticleToCategoryService())
+                {
+                    foreach (var articleDto in list)
+                    {
+                        var cates = await articleToCategoryService.GetAllAsync().Include(m => m.BlogCategory).Where(m => m.ArticleId ==
+                          articleDto.Id).ToListAsync();
+                        articleDto.CategoryIds = cates.Select(m => m.BlogCategoryId).ToArray();
+                        articleDto.CategoryNames = cates.Select(m => m.BlogCategory.CategoryName).ToArray();
+                    }
+
+                    return list;
+                }
+            }
+        }
+
+
+        public async Task<List<ArticleDto>> GetAllArticlesByUserId(Guid userId, int pageIndex, int pageSize)
+        {
             using (var articleSvc = new ArticleService()) 
             {
-                var list = await articleSvc.GetAllAsync().Include(m=>m.User).Where(m => m.UserId == userId).Select(m=>new ArticleDto() 
+                var list = await articleSvc.GetAllByPageOrderAsync(pageSize, pageIndex, false).Include(m=>m.User).Where(m => m.UserId == userId)
+                    .Select(m=>new ArticleDto() 
                 {
                     Title = m.Title, 
                     BadCount = m.BadCount, 
@@ -102,8 +135,11 @@ namespace BlogSystem.BLL
                 {
                     foreach (var articleDto in list) 
                     {
-                        var cates = await articleToCategoryService.GetAllAsync().Include(m=>m.BlogCategory).Where(m => m.ArticleId == 
-                        articleDto.Id).ToListAsync();
+                        var cates = await articleToCategoryService.GetAllAsync()
+                            .Include(m=>m.BlogCategory)
+                            .Where(m => m.ArticleId == articleDto.Id)
+                            .ToListAsync();
+
                         articleDto.CategoryIds = cates.Select(m => m.BlogCategoryId).ToArray();
                         articleDto.CategoryNames = cates.Select(m => m.BlogCategory.CategoryName).ToArray();
                     }
@@ -122,6 +158,15 @@ namespace BlogSystem.BLL
                     Id = m.Id, 
                     CategoryName = m.CategoryName
                 }).ToListAsync();
+            }
+        }
+
+        public async Task<int> GetDataCount(Guid userId)
+        {
+            using (IDAL.IArticleService articleService = new ArticleService()) 
+            {
+                return await articleService.GetAllAsync()
+                    .CountAsync(m => m.UserId == userId);
             }
         }
 

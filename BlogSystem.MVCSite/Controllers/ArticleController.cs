@@ -70,10 +70,15 @@ namespace BlogSystem.MVCSite.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> ArticleList()
+        public async Task<ActionResult> ArticleList(int pageIndex = 0, int pageSize = 1)
         {
+            // 需要给页面前端总页码数，当前页码，可显示的总页码数量
+            var manager = new ArticleManager();
             var userid = Guid.Parse(Session["userid"].ToString());
-            var articles = await new ArticleManager().GetAllArticlesByUserId(userid);
+            var articles = await manager.GetAllArticlesByUserId(userid,pageIndex,pageSize);
+            var dataCount = await manager.GetDataCount(userid);
+            ViewBag.PageCount = dataCount % pageSize == 0? dataCount/pageSize: dataCount / pageSize + 1;
+            ViewBag.PageIndex = pageIndex; 
             return View(articles);
         }
 

@@ -10,6 +10,8 @@ namespace BlogSystem.IBLL
         Task CreateArticle(string title, string content, Guid[] categoryIds, Guid userId);
         Task CreateCategory(string name,Guid userId);
         Task<List<BlogCategoryDto>> GetAllCategories(Guid userId);
+        Task<List<ArticleDto>> GetAllArticlesByUserId(Guid userId, int pageIndex, int pageSize);
+        Task<int> GetDataCount(Guid userId);
         Task<List<ArticleDto>> GetAllArticlesByUserId(Guid userId);
         Task<List<ArticleDto>> GetAllArticlesByEmail(string email);
         Task<List<ArticleDto>> GetAllArticlesByCategoryId(Guid categoryId);
