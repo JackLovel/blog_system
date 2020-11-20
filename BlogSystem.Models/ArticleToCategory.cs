@@ -12,5 +12,10 @@ namespace BlogSystem.Models
         [ForeignKey(nameof(Article))]
         public Guid ArticleId { get; set; }
         public Article Article { get; set; }
+
+        public static implicit operator Guid(ArticleToCategory v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

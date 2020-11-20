@@ -111,5 +111,12 @@ namespace BlogSystem.MVCSite.Controllers
 
             return View(await articleManager.GetOneArticleById(id.Value));
         }
+
+        [HttpGet]
+        public async Task<ActionResult> EditArticle(Guid id)
+        {
+            IBLL.IArticleManager manager = new ArticleManager();
+            return View(await manager.GetOneArticleById(id));
+        }
     }
 }

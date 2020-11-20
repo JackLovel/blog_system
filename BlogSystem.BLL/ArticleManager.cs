@@ -54,9 +54,33 @@ namespace BlogSystem.BLL
             }
         }
 
-        public Task EditArticle(Guid articleId, string title, string content, Guid[] categoryIds)
+        public async Task EditArticle(Guid articleId, string title, string content, Guid[] categoryIds)
         {
-            throw new NotImplementedException();
+            using (IDAL.IArticleService articleService = new ArticleService()) 
+            {
+                var article = await articleService.GetOneByIdAsync(articleId);
+                article.Title = title;
+                article.Content = content;
+                await articleService.EditAsync(article);
+
+                using (IDAL.IArticleToCategoryService articleToCategoryService = new ArticleToCategoryService()) 
+                {
+                    // 删除原有的类别
+                    foreach (var categoryId in articleToCategoryService.GetAllAsync().Where(m=>m.ArticleId == articleId)) 
+                    {
+                        await articleToCategoryService.RemoveAsync(categoryId, false);
+                    }
+
+                    // 删除原有的类别
+                    foreach (var categoryId in articleToCategoryService.GetAllAsync().Where(m => m.ArticleId == articleId))
+                    {
+                        await articleToCategoryService.CreateAsync(new ArticleToCategory() 
+                            { ArticleId = articleId, BlogCategoryId = categoryId}, false);
+                    }
+
+                    await articleToCategoryService.Save();
+                }
+            }
         }
 
         public Task EditCategory(Guid categoryId, string newCategory)
