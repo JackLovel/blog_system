@@ -117,6 +117,8 @@ namespace BlogSystem.MVCSite.Controllers
         {
             IBLL.IArticleManager manager = new ArticleManager();
             var data = await manager.GetOneArticleById(id);
+            var userid = Guid.Parse(Session["userid"].ToString());
+            ViewBag.CategoryIds = await new ArticleManager().GetAllCategories(userid);
             return View(new EditArticleViewModel() 
             {
                 Title = data.Title, 
