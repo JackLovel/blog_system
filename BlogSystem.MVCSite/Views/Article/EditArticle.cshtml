@@ -42,7 +42,7 @@
                 {
                     <li class="categoryIds">
                         <input type="checkbox" 
-                                checked=@(Model.CategoryIds.Contains(((BlogCategoryDto) item).Id)?"checked":"")
+                                @(Model.CategoryIds.Contains(((BlogCategoryDto) item).Id)?"checked":"")
                                 name="CategoryIds" value="@item.Id"/>
                         @item.CategoryName
                     </li>

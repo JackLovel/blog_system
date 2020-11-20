@@ -72,7 +72,7 @@ namespace BlogSystem.BLL
                     }
 
                     // 删除原有的类别
-                    foreach (var categoryId in articleToCategoryService.GetAllAsync().Where(m => m.ArticleId == articleId))
+                    foreach (var categoryId in categoryIds)
                     {
                         await articleToCategoryService.CreateAsync(new ArticleToCategory() 
                             { ArticleId = articleId, BlogCategoryId = categoryId}, false);

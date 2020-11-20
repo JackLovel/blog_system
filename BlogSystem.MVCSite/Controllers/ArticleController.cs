@@ -127,5 +127,23 @@ namespace BlogSystem.MVCSite.Controllers
                 Id = data.Id
             });
         }
+
+        [HttpPost]
+        public async Task<ActionResult> EditArticle(EditArticleViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                IArticleManager manager = new ArticleManager();
+                await manager.EditArticle(model.Id, model.Title, model.Content, model.CategoryIds);
+                return RedirectToAction("ArticleList");
+            }
+            else 
+            {
+                var userid = Guid.Parse(Session["userid"].ToString());
+                ViewBag.CategoryIds = await new ArticleManager().GetAllCategories(userid);
+                return View(model); 
+            }
+            
+        }
     }
 }
