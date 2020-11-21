@@ -20,6 +20,8 @@ namespace BlogSystem.IBLL
         Task RemoveArticle(Guid articleId);
         Task EditArticle(Guid articleId, string title, string content, Guid[] categoryIds);
         Task<bool> ExistsArticle(Guid articleId);
-        Task<Dto.ArticleDto> GetOneArticleById(Guid articleId);
+        Task<ArticleDto> GetOneArticleById(Guid articleId);
+        Task GoodCountAdd(Guid articleId);
+        Task BadCountAdd(Guid articleId);
     }
 }

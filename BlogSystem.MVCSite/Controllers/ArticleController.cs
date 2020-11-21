@@ -145,5 +145,21 @@ namespace BlogSystem.MVCSite.Controllers
             }
             
         }
+
+        [HttpPost]
+        public async Task<ActionResult> GoodCount(Guid id)
+        {
+            IArticleManager manager = new ArticleManager();
+            await manager.GoodCountAdd(id);
+            return Json(new { result = "ok" });
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> BadCount(Guid id)
+        {
+            IArticleManager manager = new ArticleManager();
+            await manager.BadCountAdd(id);
+            return Json(new { result = "ok" });
+        }
     }
 }

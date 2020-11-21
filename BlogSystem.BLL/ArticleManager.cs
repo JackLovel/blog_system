@@ -13,6 +13,7 @@ namespace BlogSystem.BLL
 {
     public class ArticleManager : IArticleManager
     {
+
         public async Task CreateArticle(string title, string content, Guid[] categoryIds, Guid userId)
         {
             using (var articleSvc = new ArticleService()) 
@@ -221,6 +222,36 @@ namespace BlogSystem.BLL
                     data.CategoryNames = cates.Select(m => m.BlogCategory.CategoryName).ToArray();
                     return data; 
                 }
+            }
+        }
+
+        /// <summary>
+        /// 反对
+        /// </summary>
+        /// <param name="articleId"></param>
+        /// <returns></returns>
+        public async Task BadCountAdd(Guid articleId)
+        {
+            using (IArticleService articleService = new ArticleService())
+            {
+                var article = await articleService.GetOneByIdAsync(articleId);
+                article.BadCount++;
+                await articleService.EditAsync(article);
+            }
+        }
+
+        /// <summary>
+        /// 点赞
+        /// </summary>
+        /// <param name="articleId"></param>
+        /// <returns></returns>
+        public async Task GoodCountAdd(Guid articleId)
+        {
+            using (IArticleService articleService = new ArticleService())
+            {
+                var article = await articleService.GetOneByIdAsync(articleId);
+                article.GoodCount++;
+                await articleService.EditAsync(article);
             }
         }
 

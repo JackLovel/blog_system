@@ -79,11 +79,35 @@
     </dl>
 </div>
 <p>
+    <button onclick="btnGoodHandler(this)">点赞</button>
+    <button onclick="btnBadHandler(this)">反对</button>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "ArticleList")
 </p>
 
 @section headers {
+    <script>
+        var articleId = '@Model.Id';
+        function btnGoodHandler(btn) {
+            $.ajax({
+                url: "/Article/GoodCount/" + articleId, 
+                type: "post"
+            }).done(() => {
+                alert("点赞成功"); 
+                btn.disabled = true; 
+            })
+        }
+
+        function btnBadHandler(btn) {
+            $.ajax({
+                url: "/Article/BadCount/" + articleId, 
+                type: "post"
+            }).done(() => {
+                alert("反对成功"); 
+                btn.disabled = true; 
+            })
+        }
+    </script>
     <style>
         .categoryIds {
             float: left;
