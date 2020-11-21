@@ -282,7 +282,7 @@ namespace BlogSystem.BLL
         {
             using (ICommentService commentService = new CommentService())
             {
-                return await commentService.GetAllAsync().Where(m => m.ArticleId == articleId)
+                return await commentService.GetAllOrderAsync(false).Where(m => m.ArticleId == articleId)
                     .Include(m=>m.User)
                     .Select(m=> new Dto.CommentDto() 
                     {
