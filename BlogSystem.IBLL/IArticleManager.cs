@@ -23,5 +23,7 @@ namespace BlogSystem.IBLL
         Task<ArticleDto> GetOneArticleById(Guid articleId);
         Task GoodCountAdd(Guid articleId);
         Task BadCountAdd(Guid articleId);
+        Task CreateComment(Guid userId, Guid articleId, string content);
+        Task<List<CommentDto>> GetCommentsByArticleId(Guid articleId);
     }
 }

@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentDto.cs" />
     <Compile Include="ArticleDto.cs" />
     <Compile Include="BlogCategoryDto.cs" />
     <Compile Include="UserInformationDto.cs" />

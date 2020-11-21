@@ -103,19 +103,21 @@ namespace BlogSystem.MVCSite.Controllers
 
         public async Task<ActionResult> ArticleDetails(Guid? id) 
         {
-            var articleManager = new ArticleManager();
-            if (id == null || !await articleManager.ExistsArticle(id.Value)) 
+            var manager = new ArticleManager();
+            if (id == null || !await manager.ExistsArticle(id.Value)) 
             {
                 return RedirectToAction(nameof(ArticleList));
             }
 
-            return View(await articleManager.GetOneArticleById(id.Value));
+            ViewBag.Comments = await manager.GetCommentsByArticleId(id.Value);
+
+            return View(await manager.GetOneArticleById(id.Value));
         }
 
         [HttpGet]
         public async Task<ActionResult> EditArticle(Guid id)
         {
-            IBLL.IArticleManager manager = new ArticleManager();
+            IArticleManager manager = new ArticleManager();
             var data = await manager.GetOneArticleById(id);
             var userid = Guid.Parse(Session["userid"].ToString());
             ViewBag.CategoryIds = await new ArticleManager().GetAllCategories(userid);
@@ -159,6 +161,16 @@ namespace BlogSystem.MVCSite.Controllers
         {
             IArticleManager manager = new ArticleManager();
             await manager.BadCountAdd(id);
+            return Json(new { result = "ok" });
+        }
+
+
+        [HttpPost]
+        public async Task<ActionResult> AddComment(CreateCommentViewModel model)
+        {
+            var userid = Guid.Parse(Session["userid"].ToString());
+            IArticleManager manager = new ArticleManager();
+            await manager.CreateComment(userid, model.Id, model.content);
             return Json(new { result = "ok" });
         }
     }

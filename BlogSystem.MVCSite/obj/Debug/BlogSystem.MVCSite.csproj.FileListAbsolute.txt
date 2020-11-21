@@ -106,3 +106,7 @@ C:\Users\gog\source\repos\BlogSystem\BlogSystem.MVCSite\obj\Debug\BlogSystem.MVC
 C:\Users\gog\source\repos\BlogSystem\BlogSystem.MVCSite\obj\Debug\BlogSystem.MVCSite.csproj.CopyComplete
 C:\Users\gog\source\repos\BlogSystem\BlogSystem.MVCSite\obj\Debug\BlogSystem.MVCSite.dll
 C:\Users\gog\source\repos\BlogSystem\BlogSystem.MVCSite\obj\Debug\BlogSystem.MVCSite.pdb
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.MVCSite\bin\Webdiyer.MvcPager.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.MVCSite\bin\Webdiyer.MvcPager.xml
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.MVCSite\bin\zh-CHS\Webdiyer.MvcPager.resources.dll
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.MVCSite\bin\zh-CHT\Webdiyer.MvcPager.resources.dll

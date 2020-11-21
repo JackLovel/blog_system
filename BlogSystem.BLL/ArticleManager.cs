@@ -264,5 +264,36 @@ namespace BlogSystem.BLL
         {
             throw new NotImplementedException();
         }
+
+        public async Task CreateComment(Guid userId, Guid articleId, string content) 
+        {
+            using (ICommentService commentService = new CommentService()) 
+            {
+                await commentService.CreateAsync(new Comment()
+                {
+                    UserId = userId, 
+                    ArticleId = articleId,
+                    Content = content
+                });
+            }
+        }
+
+        public async Task<List<CommentDto>> GetCommentsByArticleId(Guid articleId)
+        {
+            using (ICommentService commentService = new CommentService())
+            {
+                return await commentService.GetAllAsync().Where(m => m.ArticleId == articleId)
+                    .Include(m=>m.User)
+                    .Select(m=> new Dto.CommentDto() 
+                    {
+                        Id = m.Id, 
+                        ArticleId = m.ArticleId, 
+                        UserId = m.UserId,
+                        Email = m.User.Email,   
+                        Content = m.Content, 
+                        CreateTime = m.CreateTime
+                    }).ToListAsync();
+            }
+        }
     }
 }

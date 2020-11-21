@@ -11,3 +11,4 @@ C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Mode
 C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.pdb
 C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.Migrations.createBlog.resources
 C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.csproj.GenerateResource.cache
+C:\Users\gog\source\repos\BlogSystem\BlogSystem.Models\obj\Debug\BlogSystem.Models.csprojAssemblyReference.cache

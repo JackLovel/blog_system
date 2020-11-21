@@ -83,7 +83,21 @@
     <button onclick="btnBadHandler(this)">反对</button>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "ArticleList")
+
+    <input type="text" name="txtComment" id="txtComment" value="" />
+    <button onclick="addComment()">添加评论</button>
 </p>
+
+<ul>
+    @foreach (var c in ViewBag.Comments)
+    {
+        <li>
+            <span>@c.Content</span>
+            <br />
+            <span>@c.Email @c.CreateTime</span>
+        </li>
+    }
+</ul>
 
 @section headers {
     <script>
@@ -106,6 +120,19 @@
                 alert("反对成功"); 
                 btn.disabled = true; 
             })
+        }
+        function addComment() {
+            $.ajax({
+                url: "/Article/AddComment/" + articleId,
+                type: "post",
+                data: {
+                    Id: '@Model.Id',
+                    Content: document.getElementById("txtComment").value
+                }
+            }).done(() => {
+                alert("添加评论成功");
+                location.reload();
+            });
         }
     </script>
     <style>

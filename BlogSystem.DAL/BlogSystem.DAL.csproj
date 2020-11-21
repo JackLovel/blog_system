@@ -54,6 +54,7 @@
     <Compile Include="ArticleToCategoryService.cs" />
     <Compile Include="ArticleService.cs" />
     <Compile Include="BlogCategoryService.cs" />
+    <Compile Include="CommentService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="BaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
